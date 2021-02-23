@@ -1,10 +1,14 @@
-
-# Merges overlapping intervals
-# param intervals: list of tuples; first element < second
 def merge(intervals):
+    """
+    Merges overlapping intervals
+
+    :param intervals: list of tuples; first element < second
+    :return: list of merged intervals
+    """
     if len(intervals) <= 1:
         return intervals
 
+    # Sorting the intervals is cheap and makes traversal simple.
     intervals.sort(key=lambda x: x[0])
 
     merged_invervals = []
